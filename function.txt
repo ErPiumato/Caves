@@ -1,0 +1,101 @@
+Si implementi il gioco Caves.
+
+Il giocatore si muove attraverso una griglia 8x8 di caverne descritte testualmente. L'obiettivo è trovare L'amuleto di Yendor e uscire dalla porta in cui si è entrati. 
+Il giocatore inizia la partita con 100 punti ferita (se arrivano a 0 muore),  una spada che infligge 5 punti ferita di danno.
+
+Ogni cella della griglia può essere bloccata o corrispondere.a una caverna che può contenere:
+Una trappola: 25 punti ferita di danno se il giocatore entra nella stanza, scatta una volta sola
+Un oggetto loot random
+Un mostro
+L'amuleto di Yendor
+L'uscita/entrata
+Niente
+
+Il possibile loot comprende i seguenti oggetti:
+Gold: viene aggiunto denaro al totale posseduto dal giocatore
+Potion: una pozione di vita che ripristina 20 punti ferita
+
+I possibili mostri sono:
+Scheletro: attacca il giocatore togliendo 2 punti ferita e ha 12 punti ferita
+
+L'interazione avviene tramite i seguenti comandi testuali:
+N, S, W, E: muove il personaggio nella direzione cardinale corrispondente, se non è bloccata.
+Attack: il personaggio attacca il mostro (se ce ne è uno) e il mostro attacca di conseguenza (se non è stato sconfitto)
+Grab: il personaggio raccoglie il loot da terra (se ce ne è)
+Drink: il personaggio beve una pozione se ne ha una nell'inventario
+Inventory: elenca gli oggetti presenti nell'inventario
+Exit: esce dal dungeon qualora il personaggio sia nella cella di entrata/uscita e abbia l'amuleto nell'inventario
+
+
+Quando il giocatore esce dalle caverne con l'amuleto il gioco salva su file l'ammontare di oro posseduto al momento dell'uscita.
+
+Implementare il gioco e un menu che permetta di iniziare una nuova partita, vedere i record delle partite passate, i crediti del gioco, oppure uscire
+
+
+----------------------------------------------------------------------------------
+
+
+le funzioni sono dichiarate in dromedary case
+
+i tipi di varibile sono dichiarati in cammel case
+
+le cartelle sono dichiarate in cammel case
+
+i file sono dichiarati in dreomedary case
+
+
+MainAction takeUserChoiceByPrintingMenu() 
+stampa il menu e prende in input una stringa con i dovuti controlli dell'errore e ritorna l'enum (l'int) corrispondente da 0 a 4 e ripulisce il terminale
+
+CaveNode* mapGenerator(int seed)
+crea la mappa di gioco 8x8 inserendo un seed (int), può essere inserito un qualsiasi numero ma in realtà i numeriutilizzati vanno da  a  , utilizza le funzioni per creare liste (modificate) e ritorna il puntatore alla prima cella della mappa
+
+
+
+
+
+
+nothing =  , skeleton = K, trap = T, potion = H, gold = G, stair = S, amulet = A, yondor = Y, player = P
+
+---------------------------------
+|   |   |   |   |   |   |   |   | 
+---------------------------------
+|   |   |   |   |   |   |   |   | 
+---------------------------------
+|   |   |   |   |   |   |   |   | 
+---------------------------------
+|   |   |   |   | P |   |   |   | 
+---------------------------------
+|   |   |   |   |   |   |   |   | 
+---------------------------------
+|   |   |   |   |   |   |   |   | 
+---------------------------------
+|   |   |   |   |   |   |   |   | 
+---------------------------------
+|   |   |   |   |   |   |   |   | 
+---------------------------------
+
+
+
+----------- Menu -----------
+Choose one of the following options by entering the corresponding number
+1 = start a new game
+2 = load a game
+3 = show current record
+4 = show history
+5 = exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
