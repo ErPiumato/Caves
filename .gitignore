@@ -1,3 +1,7 @@
+# Vscode dir
+.vscode
+!.vscode/tasks.json
+
 # Prerequisites
 *.d
 
